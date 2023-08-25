@@ -10,6 +10,7 @@
             <img src="{{ asset('storage/' . $project->image) }}" class="card-img-top" style="height: 200px" alt="{{$project->title}}">
             @endif
             <div class="card-body">
+            <h5 class="card-title"><span class='fw-bold'>Type Name: </span> {{$project->type->name}}</h5>
             <h5 class="card-title"><span class='fw-bold'>ID:</span> {{$project->id}}</h5>
             <p class="card-text"><span class='fw-bold'>Title: </span>{{$project->title}}</p>
             <p class="card-text"><span class='fw-bold'>Slug: </span>{{$project->slug}}</p>
