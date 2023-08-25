@@ -61,7 +61,7 @@ class TypeSeeder extends Seeder
         foreach($types as $type){
             $newType = new Type();
             $newType->name = $type['name'];
-            $newType->created_at = $types->date();
+            $newType->created_at = $faker->date();
             $newType->slug = $faker->slug();
             $newType->description = $type['description'];
             $newType->save();
