@@ -18,4 +18,8 @@ class Project extends Model
     public function getRouteKeyName(): string{
         return 'slug';
     }
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
