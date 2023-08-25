@@ -19,10 +19,10 @@
       <label for="title" class="form-label">Title</label>
       <input type="text" class="form-control" id="title" name="title" value="{{ old('title','')}}">
     </div>
-    <select class="form-select mb-3" aria-label="Default select example">
+    <p>Type Project</p>
+    <select class="form-select mb-3" aria-label="Default select example" name='type_id'>
       @foreach($types as $type)
-          <option selected class='mb-3'>Type Of Project</option>
-          <option value="">{{$type->name}}</option>
+          <option value="{{$type->id}}">{{$type->name}}</option>
           @endforeach
     </select>
     <div class="mb-3">

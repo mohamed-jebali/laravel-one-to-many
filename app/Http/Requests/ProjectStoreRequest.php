@@ -27,6 +27,7 @@ class ProjectStoreRequest extends FormRequest
             "description" => "required|min:10",
             "slug" => "min:10|required",
             "image" => "required|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "type_id" => "required|exists:types,id" 
         ];
     }
 
@@ -44,6 +45,7 @@ class ProjectStoreRequest extends FormRequest
             "image.image" => "Il file deve essere un'immagine.",
             "image.mimes" => "L'immagine deve essere di uno dei seguenti formati: jpg, jpeg, png, bmp, gif, svg, o webp",
             "image.max" => "L'immagine non può superare 2 MB.",
+            "type_id.required" => "specificare il tipo di progetto" 
         ];
     }
 }

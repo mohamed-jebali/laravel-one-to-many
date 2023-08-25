@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     protected $table = 'project';
-    protected $fillable = ['title', 'description', 'slug', 'image'];
+    protected $fillable = ['title','type_id' ,'description', 'slug', 'image'];
 
     use HasFactory;
     use SoftDeletes;

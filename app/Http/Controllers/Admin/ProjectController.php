@@ -42,6 +42,7 @@ class ProjectController extends Controller
         $newProject = new Project ();
         $data = $request->validated();
         $newProject->fill($data);
+        $newProject->type_id = $request->input('type_id');
 
         if ($request->hasFile('image')){
             $img_path = Storage::disk('public')->put('uploads/projects', $data['image']);
@@ -88,6 +89,7 @@ class ProjectController extends Controller
         }
 
         $data['slug'] = Str::of("$project->id " . $data['title'])->slug('-');
+        $project->type_id = $request->input('type_id');
         $project->update($data);
 
         return redirect()->route('admin.projects.index', compact('project'))->with('update',$project->title);
